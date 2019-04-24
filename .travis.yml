@@ -1,6 +1,5 @@
 language: node_js
-# 指定需要sudo权限
-sudo: required
+node_js: stable
 # 指定缓存模块，可选。缓存可加快编译速度。
 cache:
   directories:
@@ -22,3 +21,6 @@ after_script:
   - sed -i "s/gh_token/${ACCESS_TOKEN}/g" ./_config.yml
   - hexo deploy
 # End: Build LifeCycle
+branches:
+  only:
+    - master
